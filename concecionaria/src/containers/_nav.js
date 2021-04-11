@@ -4,29 +4,43 @@ export default [
     _children: [
       {
         _name: 'CSidebarNavItem',
-        name: 'Dashboard',
+        name: 'Menu',
         to: '/dashboard',
-        icon: 'cil-speedometer',
-        badge: {
-          color: 'primary',
-          text: 'NEW'
-        }
+        icon: 'cil-menu',
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Theme']
+        _children: ['Listas']
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Colors',
+        name: 'Usuários',
+        to: '/theme/colors',
+        icon: 'cil-user'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Clientes',
         to: '/theme/colors',
         icon: 'cil-drop'
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Typography',
-        to: '/theme/typography',
-        icon: 'cil-pencil'
+        name: 'Veículos',
+        to: '/theme/colors',
+        icon: 'cil-drop'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Vendedores',
+        to: '/theme/colors',
+        icon: 'cil-drop'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Vendas',
+        to: '/theme/colors',
+        icon: 'cil-drop'
       },
       {
         _name: 'CSidebarNavTitle',
@@ -221,22 +235,7 @@ export default [
           }
         ]
       },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Download CoreUI',
-        href: 'http://coreui.io/vue/',
-        icon: { name: 'cil-cloud-download', class: 'text-white' },
-        _class: 'bg-success text-white',
-        target: '_blank'
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Try CoreUI PRO',
-        href: 'http://coreui.io/pro/vue/',
-        icon: { name: 'cil-layers', class: 'text-white' },
-        _class: 'bg-danger text-white',
-        target: '_blank'
-      }
+      
     ]
   }
 ]
