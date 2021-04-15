@@ -1,4 +1,4 @@
-﻿create database concecionaria;
+﻿create database concessionaria;
 
 create table usuario(
 id_usu int(3),
