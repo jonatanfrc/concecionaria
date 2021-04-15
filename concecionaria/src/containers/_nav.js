@@ -22,25 +22,25 @@ export default [
         _name: 'CSidebarNavItem',
         name: 'Clientes',
         to: '/theme/colors',
-        icon: 'cil-drop'
+        icon: 'cil-heart'
       },
       {
         _name: 'CSidebarNavItem',
         name: 'Veículos',
         to: '/theme/colors',
-        icon: 'cil-drop'
+        icon: 'cil-car-alt'
       },
       {
         _name: 'CSidebarNavItem',
         name: 'Vendedores',
         to: '/theme/colors',
-        icon: 'cil-drop'
+        icon: 'cil-tag'
       },
       {
         _name: 'CSidebarNavItem',
         name: 'Vendas',
         to: '/theme/colors',
-        icon: 'cil-drop'
+        icon: 'cil-wallet'
       },
       {
         _name: 'CSidebarNavTitle',
