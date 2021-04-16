@@ -8,15 +8,15 @@
               <CCardBody>
                 <CForm>
                   <h1>Login</h1>
-                  <p class="text-muted">Sign In to your account</p>
+                  <p class="text-muted">Entrar com sua conta</p>
                   <CInput
-                    placeholder="Username"
+                    placeholder="Email"
                     autocomplete="username email"
                   >
                     <template #prepend-content><CIcon name="cil-user"/></template>
                   </CInput>
                   <CInput
-                    placeholder="Password"
+                    placeholder="Senha"
                     type="password"
                     autocomplete="curent-password"
                   >
@@ -24,11 +24,11 @@
                   </CInput>
                   <CRow>
                     <CCol col="6" class="text-left">
-                      <CButton color="primary" class="px-4">Login</CButton>
+                      <CButton color="primary" class="px-4">Entrar</CButton>
                     </CCol>
                     <CCol col="6" class="text-right">
-                      <CButton color="link" class="px-0">Forgot password?</CButton>
-                      <CButton color="link" class="d-lg-none">Register now!</CButton>
+                      <CButton color="link" class="px-0">Esqueceu sua Senha?</CButton>
+                      <CButton color="link" class="d-lg-none">Registre-se agora!</CButton>
                     </CCol>
                   </CRow>
                 </CForm>
@@ -41,14 +41,14 @@
               body-wrapper
             >
               <CCardBody>
-                <h2>Sign up</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2>Ainda não possui conta?</h2>
+                <p>Caso ainda não possua uma conta clique no botão abaixo para registrar-se!</p>
                 <CButton
                   color="light"
                   variant="outline"
                   size="lg"
                 >
-                  Register Now!
+                  Registre-se agora!
                 </CButton>
               </CCardBody>
             </CCard>
