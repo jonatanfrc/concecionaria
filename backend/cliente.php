@@ -20,7 +20,11 @@ switch($opcion){
         break;
 
     case 2: //modificacao
+<<<<<<< HEAD
         $consulta = "UPDATE cliente SET marca = '$id_cli', '$cpf', '$nome', '$telefone', '$endereco' WHERE id_cli = '$id_cli' ";
+=======
+        $consulta = "UPDATE cliente SET id_cli = '$id_cli', cpf = '$cpf', nome = '$nome', telefone = '$telefone', enderenco = '$endereco' WHERE id_cli = '$id_cli' ";
+>>>>>>> rian.melo
         $resultado = $conexion -> prepare($consulta);
         $resultado -> execute();
         $data = $resultado -> fecthAll(pdo::FETCH_ASSOC);
