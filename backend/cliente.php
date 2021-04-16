@@ -5,14 +5,14 @@ $conexion = $objeto->Conectar();
 
 $_POST = json_decode(file_get_contents("php://input"), true);
 
-$options = (isset($_POST['options'])) ? $_POST['options'] : '';
+$opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 $id_cli = (isset($_POST['id_cli'])) ? $_POST['id_cli'] : '';
 $cpf = (isset($_POST['cpf'])) ? $_POST['cpf'] : '';
 $nome = (isset($_POST['nome'])) ? $_POST['nome'] : '';
 $telefone = (isset($_POST['telefone'])) ? $_POST['telefone'] : '';
 $endereco = (isset($_POST['endereco'])) ? $_POST['endereco'] : '';
 
-switch($options){
+switch($opcion){
     case 1: //criar
         $consulta = "INSERT INTO cliente (id_cli, cpf, nome, telefone, endereco) VALUES('$id_cli', '$cpf', '$nome', '$telefone', '$endereco') ";
         $resultado = $conexion->prepare($consulta);
@@ -20,7 +20,7 @@ switch($options){
         break;
 
     case 2: //modificacao
-        $consulta = "UPDATE cliente SET marca = '$id_cli', cpf = '$cpf', nome = '$nome', telefone = '$telefone', enderenco = '$endereco' WHERE id_cli = '$id_cli' ";
+        $consulta = "UPDATE cliente SET marca = '$id_cli', '$cpf', '$nome', '$telefone', '$endereco' WHERE id_cli = '$id_cli' ";
         $resultado = $conexion -> prepare($consulta);
         $resultado -> execute();
         $data = $resultado -> fecthAll(pdo::FETCH_ASSOC);
