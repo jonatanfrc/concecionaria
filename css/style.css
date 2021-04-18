@@ -10,6 +10,12 @@ body{
 	flex-direction: column;
 }
 
+.logoempresa{
+	right: 80%;
+	margin-right: 30px;
+	position: absolute;
+}
+
 .container form {
 	width: 500px;
 	padding: 20px;
