@@ -17,24 +17,24 @@ if (isset($_POST['create'])) {
 	$user_data = 'nome='.$nome. '&cpf='.$cpf. '&telefone='.$telefone. '&endereco='.$endereco;
 
 	if (empty($nome)) {
-		header("Location: ../listaCliente.php?error=Nome é obrigatório&$user_data");
+		header("Location: ../listaVendedor.php?error=Nome é obrigatório&$user_data");
 	}else if (empty($cpf)) {
-		header("Location: ../listaCliente.php?error=CPF é obrigatório&$user_data");
+		header("Location: ../listaVendedor.php?error=CPF é obrigatório&$user_data");
 	}else if (empty($telefone)) {
-		header("Location: ../listaCliente.php?error=Telefone é obrigatório&$user_data");
+		header("Location: ../listaVendedor.php?error=Telefone é obrigatório&$user_data");
 	}else if (empty($endereco)) {
-		header("Location: ../listaCliente.php?error=Endereço é obrigatório&$user_data");
+		header("Location: ../listaVendedor.php?error=Endereço é obrigatório&$user_data");
 	}
 	
 	else {
 
-       $sql = "INSERT INTO cliente(nome, cpf, telefone, endereco) 
+       $sql = "INSERT INTO vendedor(nome, cpf, telefone, endereco) 
                VALUES('$nome', '$cpf', '$telefone', '$endereco')";
        $result = mysqli_query($conn, $sql);
        if ($result) {
-       	  header("Location: ../listaCliente.php");
+       	  header("Location: ../listaVendedor.php");
        }else {
-          header("Location: ../listaCliente.php?error&$user_data");
+          header("Location: ../listaVendedor.php?error&$user_data");
        }
 	}
 
