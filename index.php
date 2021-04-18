@@ -1,3 +1,4 @@
+<?php include "php/conexao.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -13,14 +14,14 @@
 	<body>
 		<header>
 			<div class="caixa">
-				<h1><img height="110" src="img/logorazor.png"></h1>
+				<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
 
 				<nav>
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li><a href="listaCliente.php">Clientes</a></li>
 						<li><a href="listaVendedor.php">Vendedores</a></li>
-						<li><a href="listaVeiculos.php">Veículos</a></li>
+						<li><a href="listaVeiculo.php">Veículos</a></li>
 						<li><a href="listaVendas.php">Vendas</a></li>
 						<li><a href="contato.html"></a></li>
 					</ul>
@@ -28,7 +29,7 @@
 			</div>
 		</header>
 
-		<img class="banner" src="img/banner.jpg">
+		<img class="banner" src="img/dentroConcessionaria.jpg">
 
 	<main>
 		<section class="principal">
@@ -74,7 +75,7 @@
 	</main>
 
 		<footer>
-			<img src="img/logo-branco.png">
+			<img src="img/logoempresa.png">
 			<p class="copyright">&copy; Copyright Concessionária Razor - 2021</p>
 		</footer>
 

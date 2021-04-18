@@ -16,11 +16,10 @@ primary key(id_cli));
 
 create table veiculo(
 id_vei int(3) NOT NULL AUTO_INCREMENT,
-placa varchar(8) not null,
 modelo varchar(30) not null,
 cor varchar(25) not null,
 fabricante varchar(30) not null,
-ano date not null,
+ano char(4) not null,
 primary key(id_vei));
 
 create table vendedor(
@@ -48,8 +47,8 @@ VALUES ('jonatan', '123');
 INSERT INTO cliente (cpf, nome, telefone, endereco)
 VALUES ('1234567890', 'Rian', '3406-1002', 'Rua A');
 
-INSERT INTO veiculo (placa, modelo, cor, fabricante, ano)
-VALUES ('DHH-8307', 'Azera', 'Preto','Hyundai', '2020/10/10');
+INSERT INTO veiculo (modelo, cor, fabricante, ano)
+VALUES ('Azera', 'Preto','Hyundai', '2020');
 
 INSERT INTO vendedor (cpf, nome, telefone, endereco)
 VALUES ('0123456789', 'Gustavo', '997960501', 'Rua B');
