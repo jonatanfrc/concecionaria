@@ -55,9 +55,9 @@
 								<td><?php echo $rows['cpf']; ?></td>
 								<td><?php echo $rows['telefone']; ?></td>
 								<td><?php echo $rows['endereco']; ?></td>
-								<td><a href="editaCliente.php?id_cli=<?= $rows['id_cli'] ?>" class="btn btn-success">Atualizar</a>
+								<td><a href="editaCliente.php?id_cli=<?= $rows['id_cli'] ?>" class="btn btn-success">Editar</a>
 
-									<a href="php/deleteCliente.php?id_cli=<?= $rows['id_cli'] ?>" class="btn btn-danger">Deletar</a>
+									<a href="php/deleteCliente.php?id_cli=<?= $rows['id_cli'] ?>" class="btn btn-danger">Excluir</a>
 								</td>
 							</tr>
 						<?php } ?>

@@ -55,9 +55,11 @@
 			</div>
 			<input type="text" name="id" value="<?= $row['id_cli'] ?>" hidden>
 
-			<button type="submit" class="btn btn-primary" name="update">Editar</button>
-			<a href="listaCliente.php" class="link-primary">Visualizar</a>
-		</form>
+		   <button type="submit" 
+		           class="btn btn-primary"
+		           name="update">Editar</button>
+		    <a href="listaCliente.php" class="link-primary">Voltar</a>
+	    </form>
 	</div>
 </body>
 

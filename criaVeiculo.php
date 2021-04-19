@@ -77,8 +77,8 @@
 
 		   <button type="submit" 
 		          class="btn btn-primary"
-		          name="create">Criar</button>
-		    <a href="listaVeiculo.php" class="link-primary"> Ver lista de veículos</a>
+		          name="create">Adicionar</button>
+		    <a href="listaVeiculo.php" class="link-primary"> Voltar</a>
 	    </form>
 	</div>
 </body>
