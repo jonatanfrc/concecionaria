@@ -22,7 +22,8 @@
 						<li><a href="listaCliente.php">Clientes</a></li>
 						<li><a href="listaVendedor.php">Vendedores</a></li>
 						<li><a href="listaVeiculo.php">Veículos</a></li>
-						<li><a href="listaVendas.php">Vendas</a></li>
+						<li><a href="listaVenda.php">Vendas</a></li>
+						<li><a href="contato.html"></a></li>
 					</ul>
 				</nav>
 			</div>

@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header>
+			<div class="caixa">
+				<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
+
+				<nav>
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="listaCliente.php">Clientes</a></li>
+						<li><a href="listaVendedor.php">Vendedores</a></li>
+						<li><a href="listaVeiculo.php">Veículos</a></li>
+						<li><a href="listaVenda.php">Vendas</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 	<div class="container">
 		<form action="php/updateVendedor.php" 
 		      method="post">

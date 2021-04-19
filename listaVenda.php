@@ -1,9 +1,9 @@
-<?php include "php/readCliente.php"; ?>
+<?php include "php/readVenda.php"; ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-	<title>Lista de clientes</title>
+	<title>Lista de vendas</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,7 +14,7 @@
 			<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
 
 			<nav>
-				<ul>
+				<ul>	
 					<li><a href="index.php">Home</a></li>
 					<li><a href="listaCliente.php">Clientes</a></li>
 					<li><a href="listaVendedor.php">Vendedores</a></li>
@@ -26,7 +26,7 @@
 	</header>
 	<div class="container">
 		<div class="box">
-			<h4 class="display-4 text-center">Clientes</h4><br>
+			<h4 class="display-4 text-center">Vendas</h4><br>
 			<?php if (isset($_GET['Sucesso!'])) { ?>
 				<div class="alert alert-success" role="alert">
 					<?php echo $_GET['Sucesso!']; ?>
@@ -37,10 +37,10 @@
 					<thead>
 						<tr>
 							<th scope="col">#</th>
-							<th scope="col">Nome</th>
-							<th scope="col">CPF</th>
-							<th scope="col">Telefone</th>
-							<th scope="col">Endereço</th>
+							<th scope="col">Nome vendedor</th>
+							<th scope="col">Nome cliente</th>
+							<th scope="col">Nome veículo</th>
+							<th scope="col">Anotações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -51,13 +51,13 @@
 						?>
 							<tr>
 								<th scope="row"><?= $i ?></th>
-								<td><?= $rows['nomeCli'] ?></td>
-								<td><?php echo $rows['cpf']; ?></td>
-								<td><?php echo $rows['telefone']; ?></td>
-								<td><?php echo $rows['endereco']; ?></td>
-								<td><a href="editaCliente.php?id_cli=<?= $rows['id_cli'] ?>" class="btn btn-success">Editar</a>
+								<td><?= $rows['nome'] ?></td>
+								<td><?php echo $rows['nomeCli']; ?></td>
+								<td><?php echo $rows['modelo']; ?></td>
+								<td><?php echo $rows['anotacoes']; ?></td>
+								<td><a href="editaVenda.php?id_venda=<?= $rows['id_venda'] ?>" class="btn btn-success">Atualizar</a>
 
-									<a href="php/deleteCliente.php?id_cli=<?= $rows['id_cli'] ?>" class="btn btn-danger">Excluir</a>
+									<a href="php/deleteVenda.php?id_venda=<?= $rows['id_venda'] ?>" class="btn btn-danger">Deletar</a>
 								</td>
 							</tr>
 						<?php } ?>
@@ -65,7 +65,7 @@
 				</table>
 			<?php } ?>
 			<div class="link-right">
-				<a href="criaCliente.php" class="link-primary">Adicionar novo +</a>
+				<a href="criaVenda.php" class="link-primary">Adicionar novo +</a>
 			</div>
 		</div>
 	</div>

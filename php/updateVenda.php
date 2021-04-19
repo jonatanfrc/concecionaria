@@ -32,7 +32,7 @@ if (isset($_GET['id_cli'])) {
                 return $data;
         }
 
-        $nome = validate($_POST['nomeCli']);
+        $nome = validate($_POST['nome']);
 	$cpf = validate($_POST['cpf']);
 	$telefone = validate($_POST['telefone']);
 	$endereco = validate($_POST['endereco']);
