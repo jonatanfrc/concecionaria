@@ -60,7 +60,7 @@
 		   <button type="submit" 
 		           class="btn btn-primary"
 		           name="update">Editar</button>
-		    <a href="listaVeiculo.php" class="link-primary">Visualizar</a>
+		    <a href="listaVeiculo.php" class="link-primary">Voltar</a>
 	    </form>
 	</div>
 </body>

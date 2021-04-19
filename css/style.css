@@ -10,6 +10,12 @@ body{
 	flex-direction: column;
 }
 
+.footerEnd{
+	background: #BBBBBB;
+	height: 200px;
+
+}
+
 .logoempresa{
 	right: 80%;
 	margin-right: 30px;
@@ -190,8 +196,8 @@ td, th {
 /*CSS da página incial*/
 
 .banner{
-	width: 100%;
-
+	width: 75%;
+	height: 600px;
 }
 
 .titulo-principal{
@@ -201,17 +207,9 @@ td, th {
 	clear: left;
 }
 
-.titulo-principal:first-letter{
+.c-principal:first-letter{
 	font-weight: bold;
 }
-
-.titulo-principal:before{
-	content: "[ "
-	}
-
-.titulo-principal:after{
-	content: " ]"
-	}
 
 .principal {
 	padding: 3em 0;
@@ -239,7 +237,12 @@ td, th {
 
 .mapa{
 	padding: 3em 0;
-	background: linear-gradient(#FEFEFE,#888888) ;
+	background: linear-gradient(#fefefe, #000000);
+}
+
+.mapace{
+	padding: 3em 0;
+	background: linear-gradient(#000000, #fefefe) ;
 }
 
 .mapa-conteudo{
@@ -254,12 +257,12 @@ td, th {
 
 .beneficios{
 	padding: 3em 0;
-	background: #888888;
 }
 
 .conteudo-beneficios{
 	width: 640px;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .lista-beneficios{
