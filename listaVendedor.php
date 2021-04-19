@@ -39,10 +39,10 @@
 			      <td><?php echo $rows['telefone']; ?></td>
 			      <td><?php echo $rows['endereco']; ?></td>
 			      <td><a href="editaVendedor.php?id_ven=<?=$rows['id_ven']?>" 
-			      	     class="btn btn-success">Atualizar</a>
+			      	     class="btn btn-success">Editar</a>
 
 			      	  <a href="php/deleteVendedor.php?id_ven=<?=$rows['id_ven']?>" 
-			      	     class="btn btn-danger">Deletar</a>
+			      	     class="btn btn-danger">Excluir</a>
 			      </td>
 			    </tr>
 			    <?php } ?>
