@@ -6,6 +6,21 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header>
+			<div class="caixa">
+				<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
+
+				<nav>
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="listaCliente.php">Clientes</a></li>
+						<li><a href="listaVendedor.php">Vendedores</a></li>
+						<li><a href="listaVeiculo.php">Veículos</a></li>
+						<li><a href="listaVenda.php">Vendas</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 	<div class="container">
 		<form action="php/createCliente.php" 
 		      method="post">
@@ -22,8 +37,8 @@
 		           class="form-control" 
 		           id="nome" 
 		           name="nome" 
-		           value="<?php if(isset($_GET['nome']))
-		                           echo($_GET['nome']); ?>" 
+		           value="<?php if(isset($_GET['nomeCli']))
+		                           echo($_GET['nomeCli']); ?>" 
 		           placeholder="Digite o nome do cliente">
 		   </div>
 

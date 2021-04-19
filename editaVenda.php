@@ -1,9 +1,9 @@
-<?php include 'php/updateCliente.php'; ?>
+<?php include 'php/updateVenda.php'; ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-	<title>Editar cliente</title>
+	<title>Editar venda</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,7 +25,7 @@
 		</div>
 	</header>
 	<div class="container">
-		<form action="php/updateCliente.php" method="post">
+		<form action="php/updateVenda.php" method="post">
 
 			<h4 class="display-4 text-center">Editar</h4>
 			<hr><br>
@@ -36,7 +36,7 @@
 			<?php } ?>
 			<div class="form-group">
 				<label for="nome">Nome</label>
-				<input type="text" class="form-control" id="nome" name="nome" value="<?= $row['nomeCli'] ?>">
+				<input type="text" class="form-control" id="nome" name="nome" value="<?= $row['nome'] ?>">
 			</div>
 
 			<div class="form-group">
@@ -53,10 +53,10 @@
 				<label for="endereco">Endereço</label>
 				<input type="text" class="form-control" id="endereco" name="endereco" value="<?= $row['endereco'] ?>">
 			</div>
-			<input type="text" name="id" value="<?= $row['id_cli'] ?>" hidden>
+			<input type="text" name="id" value="<?= $row['id_ven'] ?>" hidden>
 
 			<button type="submit" class="btn btn-primary" name="update">Editar</button>
-			<a href="listaCliente.php" class="link-primary">Visualizar</a>
+			<a href="listaVendedor.php" class="link-primary">Visualizar</a>
 		</form>
 	</div>
 </body>

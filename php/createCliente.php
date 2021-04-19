@@ -9,12 +9,12 @@ if (isset($_POST['create'])) {
         return $data;
 	}
 
-	$nome = validate($_POST['nome']);
+	$nome = validate($_POST['nomeCli']);
 	$cpf = validate($_POST['cpf']);
 	$telefone = validate($_POST['telefone']);
 	$endereco = validate($_POST['endereco']);
 
-	$user_data = 'nome='.$nome. '&cpf='.$cpf. '&telefone='.$telefone. '&endereco='.$endereco;
+	$user_data = 'nomeCli='.$nome. '&cpf='.$cpf. '&telefone='.$telefone. '&endereco='.$endereco;
 
 	if (empty($nome)) {
 		header("Location: ../listaCliente.php?error=Nome é obrigatório&$user_data");
@@ -28,7 +28,7 @@ if (isset($_POST['create'])) {
 	
 	else {
 
-       $sql = "INSERT INTO cliente(nome, cpf, telefone, endereco) 
+       $sql = "INSERT INTO cliente(nomeCli, cpf, telefone, endereco) 
                VALUES('$nome', '$cpf', '$telefone', '$endereco')";
        $result = mysqli_query($conn, $sql);
        if ($result) {

@@ -9,7 +9,7 @@ primary key(id_usu));
 create table cliente(
 id_cli int(3) NOT NULL AUTO_INCREMENT,
 cpf varchar(14) not null,
-nome varchar(40) not null,
+nomeCli varchar(40) not null,
 telefone varchar(16) not null,
 endereco varchar(50) not null,
 primary key(id_cli));
@@ -44,7 +44,7 @@ foreign key(id_vei) references veiculo(id_vei));
 INSERT INTO usuario (login, senha)
 VALUES ('jonatan', '123');
 
-INSERT INTO cliente (cpf, nome, telefone, endereco)
+INSERT INTO cliente (cpf, nomeCli, telefone, endereco)
 VALUES ('1234567890', 'Rian', '3406-1002', 'Rua A');
 
 INSERT INTO veiculo (modelo, cor, fabricante, ano)
