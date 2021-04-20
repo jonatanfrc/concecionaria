@@ -24,6 +24,7 @@
 			</nav>
 		</div>
 	</header>
+	<section class="grade">
 	<div class="container">
 		<form action="php/createVenda.php" method="post">
 
@@ -52,10 +53,10 @@
 
 
 
-		<button type="submit" class="btn btn-primary" name="create">Criar</button>
-		<a href="listaVenda.php" class="link-primary"> Voltar</a>
+		<button type="submit" class="btn btn-primary" name="create">Adicionar</button>
+		<a href="listaVenda.php" class="retornar"> Voltar</a>
 		</form>
 	</div>
+	</section>
 </body>
-
 </html>

@@ -22,6 +22,7 @@
 				</nav>
 			</div>
 		</header>
+	<section class="grade">
 	<div class="container">
 		<form action="php/updateVendedor.php" 
 		      method="post">
@@ -75,8 +76,9 @@
 		   <button type="submit" 
 		           class="btn btn-primary"
 		           name="update">Editar</button>
-		    <a href="listaVendedor.php" class="link-primary">Voltar</a>
+		    <a href="listaVendedor.php" class="retornar">Voltar</a>
 	    </form>
 	</div>
+	</section>
 </body>
 </html>

@@ -5,13 +5,17 @@ body{
 .container {
 	min-height: 100vh;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	margin-top: 20px;
+}
+
+.retornar{
+	color:white;
 }
 
 .footerEnd{
-	background: #BBBBBB;
+	background: #f70d0d;
 	height: 200px;
 
 }
@@ -233,6 +237,10 @@ td, th {
 
 .mapa{
 	padding: 3em 0;
+	background: linear-gradient(#fefefe, #000000);
+}
+
+.grade{
 	background: linear-gradient(#fefefe, #000000);
 }
 

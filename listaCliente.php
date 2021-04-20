@@ -24,6 +24,7 @@
 			</nav>
 		</div>
 	</header>
+	<section class="mapa">
 	<div class="container">
 		<div class="box">
 			<h4 class="display-4 text-center">Clientes</h4><br>
@@ -69,6 +70,7 @@
 			</div>
 		</div>
 	</div>
+	</section>
 </body>
 
 </html>

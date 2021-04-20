@@ -24,6 +24,7 @@
 			</nav>
 		</div>
 	</header>
+	<section class="mapa">
 	<div class="container">
 		<div class="box">
 			<h4 class="display-4 text-center">Vendas</h4><br>
@@ -55,9 +56,9 @@
 								<td><?php echo $rows['nomeCli']; ?></td>
 								<td><?php echo $rows['modelo']; ?></td>
 								<td><?php echo $rows['anotacoes']; ?></td>
-								<td><a href="editaVenda.php?id_venda=<?= $rows['id_venda'] ?>" class="btn btn-success">Atualizar</a>
+								<td><a href="editaVenda.php?id_venda=<?= $rows['id_venda'] ?>" class="btn btn-success">Editar</a>
 
-									<a href="php/deleteVenda.php?id_venda=<?= $rows['id_venda'] ?>" class="btn btn-danger">Deletar</a>
+									<a href="php/deleteVenda.php?id_venda=<?= $rows['id_venda'] ?>" class="btn btn-danger">Excluir</a>
 								</td>
 							</tr>
 						<?php } ?>
@@ -69,6 +70,7 @@
 			</div>
 		</div>
 	</div>
+	</section>
 </body>
 
 </html>
