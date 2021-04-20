@@ -61,6 +61,6 @@
 			<img src="img/logoempresa.png" height="200">
 			<p class="copyright">&copy; Copyright Concessionária Razor - 2021</p>
 		</footer>
-
+		
 	</body>
 </html>
