@@ -2,7 +2,7 @@
 
 create table usuario(
 id_usu int(3) NOT NULL AUTO_INCREMENT,
-login varchar(20),
+usuario varchar(20),
 senha varchar(30),
 primary key(id_usu));
 
@@ -41,7 +41,7 @@ foreign key(id_ven) references vendedor(id_ven),
 foreign key(id_cli) references cliente(id_cli),
 foreign key(id_vei) references veiculo(id_vei));
 
-INSERT INTO usuario (login, senha)
+INSERT INTO usuario (usuario, senha)
 VALUES ('jonatan', '123');
 
 INSERT INTO cliente (cpf, nomeCli, telefone, endereco)

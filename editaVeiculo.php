@@ -1,4 +1,5 @@
 <?php include 'php/updateVeiculo.php'; ?>
+<?php include('php/verifica_login.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,7 @@
 </head>
 <body class="scroll">
 <header>
+<h3 class="logout"><a href="php/logout.php">LOGOUT</a></h3>
 			<div class="caixa">
 				<h1><img height="220" class="logoempresa" src="img/logoempresa.png"></h1>
 
