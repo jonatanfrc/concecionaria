@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width">
 
 		<title>Concessionária Razor</title>
+		<link rel="icon" type="image/png" sizes="96x96" href="img/icone.png">
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -14,8 +15,7 @@
 	<body>
 		<header>
 			<div class="caixa">
-				<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
-
+				<h1><img height="220" class="logoempresa" src="img/logoempresa.png"></h1>
 				<nav>
 					<ul>
 						<li><a href="index.php">Início</a></li>

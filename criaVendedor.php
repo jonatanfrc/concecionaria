@@ -4,15 +4,16 @@
 	<title>Cadastrar Vendedor</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="scroll">
 <header>
 			<div class="caixa">
-				<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
+				<h1><img height="220" class="logoempresa" src="img/logoempresa.png"></h1>
 
 				<nav>
 					<ul>
-						<li><a href="index.php">Home</a></li>
+						<li><a href="index.php">Início</a></li>
 						<li><a href="listaCliente.php">Clientes</a></li>
 						<li><a href="listaVendedor.php">Vendedores</a></li>
 						<li><a href="listaVeiculo.php">Veículos</a></li>
