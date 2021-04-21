@@ -1,3 +1,4 @@
+<?php include('php/verifica_login.php'); ?>
 <?php include "php/readVenda.php"; ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,7 @@
 
 <body class="scroll">
 	<header>
+	<h3 class="logout"><a href="php/logout.php">LOGOUT</a></h3>
 		<div class="caixa">
 			<h1><img height="220" class="logoempresa" src="img/logoempresa.png"></h1>
 
