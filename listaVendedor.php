@@ -1,4 +1,5 @@
 <?php include "php/readVendedor.php"; ?>
+<?php include('php/verifica_login.php'); ?>
 <?php include "php/conexao.php"; ?>
 <!DOCTYPE html>
 <html>

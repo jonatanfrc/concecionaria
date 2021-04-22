@@ -1,4 +1,5 @@
 <?php include "php/readVenda.php"; ?>
+<?php include('php/verifica_login.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -8,8 +9,9 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="scroll">
 	<header>
+	<h3 class="logout"><a href="php/logout.php">LOGOUT</a></h3>
 		<div class="caixa">
 			<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
 
@@ -24,6 +26,7 @@
 			</nav>
 		</div>
 	</header>
+	<section class="grade">
 	<div class="container">
 		<form action="php/createVenda.php" method="post">
 
@@ -67,13 +70,14 @@
 
 					<div class="mb-3">
 						<label for="exampleFormControlTextarea1" class="form-label">Anotações: </label>
-						<textarea id="anotacoes" name="anotacoes" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+						<textarea id="anotacoes" name="anotacoes" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Insira informações adicionais"></textarea>
 					</div>
 				<?php } ?>
 				<button type="submit" class="btn btn-primary" name="create">Finalizar venda</button>
-				<a href="listaVenda.php" class="link-primary"> Voltar</a>
+				<a href="listaVenda.php" class="retornar"> Voltar</a>
 		</form>
 	</div>
+	</section>
 </body>
 
 </html>

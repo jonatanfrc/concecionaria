@@ -1,4 +1,5 @@
 <?php include "php/conexao.php"; ?>
+<?php include('php/verifica_login.php'); ?>
 <?php include "php/readCliente.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">

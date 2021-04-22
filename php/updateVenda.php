@@ -1,7 +1,18 @@
 <?php
-
-if (isset($_GET['id_cli'])) {
+if (isset($_GET['id_venda'])) {
         include "conexao.php";
+
+        $sqlVendedores = mysqli_query($conn, "SELECT id_ven, nome FROM vendedor;");
+
+        $Vendedores = $sqlVendedores->fetch_all(MYSQLI_ASSOC);
+
+        $sqlClientes = "SELECT id_cli, nomeCli FROM cliente;";
+
+        $Clientes = mysqli_query($conn, $sqlClientes);
+
+        $sqlVeiculos = "SELECT id_vei, modelo FROM veiculo;";
+
+        $Veiculos = mysqli_query($conn, $sqlVeiculos);
 
         function validate($data)
         {
@@ -11,16 +22,18 @@ if (isset($_GET['id_cli'])) {
                 return $data;
         }
 
-        $id = validate($_GET['id_cli']);
+        $id = validate($_GET['id_venda']);
 
-        $sql = "SELECT * FROM cliente WHERE id_cli = $id";
+        $sql = "SELECT * FROM venda WHERE id_venda = $id";
 
         $result = mysqli_query($conn, $sql);
+
+        $resultado = mysqli_fetch_array($result);
 
         if (mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_assoc($result);
         } else {
-                header("Location: readCliente.php");
+                header("Location: readVeiuclo.php");
         }
 } else if (isset($_POST['update'])) {
         include "conexao.php";
@@ -32,32 +45,29 @@ if (isset($_GET['id_cli'])) {
                 return $data;
         }
 
-        $nome = validate($_POST['nome']);
-	$cpf = validate($_POST['cpf']);
-	$telefone = validate($_POST['telefone']);
-	$endereco = validate($_POST['endereco']);
-        $id = validate($_POST['id']);
+        $id_ven = validate($_POST['id_ven']);
+        $id_cli = validate($_POST['id_cli']);
+        $id_vei = validate($_POST['id_vei']);
+        $anotacoes = validate($_POST['anotacoes']);
 
-        if (empty($nome)) {
-		header("Location: ../editaCliente.php?error=Nome é obrigatório&$user_data");
-	}else if (empty($cpf)) {
-		header("Location: ../editaCliente.php?error=CPF é obrigatório&$user_data");
-	}else if (empty($telefone)) {
-		header("Location: ../editaCliente.php?error=Telefone é obrigatório&$user_data");
-	}else if (empty($endereco)) {
-		header("Location: ../editaCliente.php?error=Endereço é obrigatório&$user_data");
-	} else{
-
-                $sql = "UPDATE cliente
-               SET nome ='$nome', cpf='$cpf', telefone='$telefone', endereco='$endereco'
-               WHERE id_cli = $id ";
-                $result = mysqli_query($conn, $sql);
+        if (empty($id_ven)) {
+                header("Location: ../listaVenda.php?error=Informar o vendedor é obrigatório&$user_data");
+        } else if (empty($id_cli)) {
+                header("Location: ../listaVenda.php?error=Informar o cliente é obrigatório&$user_data");
+        } else if (empty($id_vei)) {
+                header("Location: ../listaVenda.php?error=Informar o veículo é obrigatório&$user_data");
+        } else {
+                $salvaVenda = "UPDATE venda
+                SET id_ven ='$id_ven', id_cli='$id_cli', id_vei='$id_vei', anotacoes='$anotacoes'
+                WHERE id_venda = $id ";
+                $result = mysqli_query($conn, $salvaVenda);
+                var_dump($result);
                 if ($result) {
-                        header("Location: ../listaCliente.php?success=Cliente editado com sucesso!");
+                        header("Location: ../listaVenda.php?success=Venda editada com sucesso!");
                 } else {
-                        header("Location: ../updateCliente.php?id=$id&error=Oops! Alguem deu errado.&$user_data");
+                        header("Location: ../editaVenda.php?id=$id&error=Oops! Algo deu errado.&$user_data");
                 }
         }
 } else {
-        header("Location: listaCliente.php");
+        header("Location: listaVenda.php?success=teste!");
 }
