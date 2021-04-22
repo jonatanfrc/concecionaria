@@ -33,29 +33,47 @@ if (isset($_GET['id_cli'])) {
         }
 
         $nome = validate($_POST['nomeCli']);
-	$cpf = validate($_POST['cpf']);
-	$telefone = validate($_POST['telefone']);
-	$endereco = validate($_POST['endereco']);
+        $cpf = validate($_POST['cpf']);
+        $telefone = validate($_POST['telefone']);
+        $endereco = validate($_POST['endereco']);
         $id = validate($_POST['id']);
 
         if (empty($nome)) {
-		header("Location: ../editaCliente.php?error=Nome é obrigatório&$user_data");
-	}else if (empty($cpf)) {
-		header("Location: ../editaCliente.php?error=CPF é obrigatório&$user_data");
-	}else if (empty($telefone)) {
-		header("Location: ../editaCliente.php?error=Telefone é obrigatório&$user_data");
-	}else if (empty($endereco)) {
-		header("Location: ../editaCliente.php?error=Endereço é obrigatório&$user_data");
-	} else{
+                echo "<script>
+		window.location.href='../editaCliente.php?id_cli=$id';
+		alert('Ops, informar o nome é obrigatório!');
+		</script>";
+        } else if (empty($cpf)) {
+                echo "<script>
+		window.location.href='../editaCliente.php?id_cli=$id';
+		alert('Ops, informar o CPF é obrigatório!');
+		</script>";
+        } else if (empty($telefone)) {
+                echo "<script>
+		window.location.href='../editaCliente.php?id_cli=$id';
+		alert('Ops, informar o telefone é obrigatório!');
+		</script>";
+        } else if (empty($endereco)) {
+                echo "<script>
+		window.location.href='../editaCliente.php?id_cli=$id';
+		alert('Ops, informar o endereço é obrigatório!');
+		</script>";
+        } else {
 
                 $sql = "UPDATE cliente
-               SET nome ='$nome', cpf='$cpf', telefone='$telefone', endereco='$endereco'
+               SET nomeCli ='$nome', cpf='$cpf', telefone='$telefone', endereco='$endereco'
                WHERE id_cli = $id ";
                 $result = mysqli_query($conn, $sql);
                 if ($result) {
-                        header("Location: ../listaCliente.php?success=Cliente editado com sucesso!");
+                        echo "<script>
+                        window.location.href='../listaCliente.php';
+                        alert('Cadastro de cliente editado com sucesso!');
+                        </script>";
                 } else {
-                        header("Location: ../updateCliente.php?id=$id&error=Oops! Alguem deu errado.&$user_data");
+                        echo "<script>
+			window.location.href='../listaCliente.php';
+			alert('Ops, algo deu errado!');
+			</script>";
                 }
         }
 } else {

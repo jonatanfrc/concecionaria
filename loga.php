@@ -12,16 +12,6 @@ session_start();
 </head>
 
 <body>
-    <?php
-    if (isset($_SESSION['nao_autenticado'])) :
-    ?>
-        <div class="notification is-danger">
-            <p>ERRO: Usuário ou senha inválidos.</p>
-        </div>
-    <?php
-    endif;
-    unset($_SESSION['nao_autenticado']);
-    ?>
     <div class="login">
         <form class="formlogin" action="php/login.php" method="POST">
             <h1><img height="170" src="img/logoempresa.png"></h1>

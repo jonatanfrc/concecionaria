@@ -45,17 +45,27 @@ if (isset($_GET['id_venda'])) {
                 return $data;
         }
 
+        $id = validate($_POST['id']);
         $id_ven = validate($_POST['id_ven']);
         $id_cli = validate($_POST['id_cli']);
         $id_vei = validate($_POST['id_vei']);
         $anotacoes = validate($_POST['anotacoes']);
 
         if (empty($id_ven)) {
-                header("Location: ../listaVenda.php?error=Informar o vendedor é obrigatório&$user_data");
+                echo "<script>
+		window.location.href='../editaVenda.php?id_venda=$id';
+		alert('Ops, informar o vendedor é obrigatório!');
+		</script>";
         } else if (empty($id_cli)) {
-                header("Location: ../listaVenda.php?error=Informar o cliente é obrigatório&$user_data");
+                echo "<script>
+		window.location.href='../editaVenda.php?id_venda=$id';
+		alert('Ops, informar o cliente é obrigatório!');
+		</script>";
         } else if (empty($id_vei)) {
-                header("Location: ../listaVenda.php?error=Informar o veículo é obrigatório&$user_data");
+                echo "<script>
+		window.location.href='../editaVenda.php?id_venda=$id';
+		alert('Ops, informar o veículo é obrigatório!');
+		</script>";
         } else {
                 $salvaVenda = "UPDATE venda
                 SET id_ven ='$id_ven', id_cli='$id_cli', id_vei='$id_vei', anotacoes='$anotacoes'
@@ -63,11 +73,17 @@ if (isset($_GET['id_venda'])) {
                 $result = mysqli_query($conn, $salvaVenda);
                 var_dump($result);
                 if ($result) {
-                        header("Location: ../listaVenda.php?success=Venda editada com sucesso!");
+                        echo "<script>
+                        window.location.href='../listaVenda.php';
+                        alert('Cadastro de venda editado com sucesso!');
+                        </script>";
                 } else {
-                        header("Location: ../editaVenda.php?id=$id&error=Oops! Algo deu errado.&$user_data");
+                        echo "<script>
+			window.location.href='../listaVenda.php';
+			alert('Ops, algo deu errado!');
+			</script>";
                 }
         }
 } else {
-        header("Location: listaVenda.php?success=teste!");
+        header("Location: listaVenda.php");
 }

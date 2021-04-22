@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-
 <body class="scroll">
 	<header>
 	<h3 class="logout"><a href="php/logout.php">LOGOUT</a></h3>
@@ -40,7 +39,7 @@
 			<?php } ?>
 			<div class="form-group">
 				<label for="nome">Nome</label>
-				<input type="text" class="form-control" id="nome" name="nome" value="<?= $row['nomeCli'] ?>">
+				<input type="text" class="form-control" id="nomeCli" name="nomeCli" value="<?= $row['nomeCli'] ?>">
 			</div>
 
 			<div class="form-group">
