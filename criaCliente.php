@@ -39,8 +39,8 @@
 		     <label for="nome">Nome</label>
 		     <input type="text" 
 		           class="form-control" 
-		           id="nome" 
-		           name="nome" 
+		           id="nomeCli" 
+		           name="nomeCli" 
 		           value="<?php if(isset($_GET['nomeCli']))
 		                           echo($_GET['nomeCli']); ?>" 
 		           placeholder="Digite o nome do cliente">

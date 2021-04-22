@@ -17,13 +17,25 @@ if (isset($_POST['create'])) {
 	$user_data = 'modelo='.$modelo. '&cor='.$cor. '&fabricante='.$fabricante. '&ano='.$ano;
 
 	if (empty($modelo)) {
-		header("Location: ../listaVeiculo.php?error=Modelo é obrigatório&$user_data");
+		echo "<script>
+		window.location.href='../criaVeiculo.php';
+		alert('Ops, informar o modelo é obrigatório!');
+		</script>";
 	}else if (empty($cor)) {
-		header("Location: ../listaVeiculo.php?error=Cor é obrigatório&$user_data");
+		echo "<script>
+		window.location.href='../criaVeiculo.php';
+		alert('Ops, informar a cor é obrigatório!');
+		</script>";
 	}else if (empty($fabricante)) {
-		header("Location: ../listaVeiculo.php?error=Fabricante é obrigatório&$user_data");
+		echo "<script>
+		window.location.href='../criaVeiculo.php';
+		alert('Ops, informar o fabricante é obrigatório!');
+		</script>";
 	}else if (empty($ano)) {
-		header("Location: ../listaVeiculo.php?error=Ano é obrigatório&$user_data");
+		echo "<script>
+		window.location.href='../criaVeiculo.php';
+		alert('Ops, informar o ano é obrigatório!');
+		</script>";
 	}
 	
 	else {
@@ -32,9 +44,15 @@ if (isset($_POST['create'])) {
                VALUES('$modelo', '$cor', '$fabricante', '$ano')";
        $result = mysqli_query($conn, $sql);
        if ($result) {
-       	  header("Location: ../listaVeiculo.php");
+		echo "<script>
+		window.location.href='../listaVeiculo.php';
+		alert('Cadastro de veículo adicionado com sucesso!');
+		</script>";
        }else {
-          header("Location: ../listaVeiculo.php?error&$user_data");
+		echo "<script>
+		window.location.href='../listaVeiculo.php';
+		alert('Ops, algo deu errado!');
+		</script>";
        }
 	}
 

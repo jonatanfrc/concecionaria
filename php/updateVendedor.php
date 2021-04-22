@@ -33,29 +33,47 @@ if (isset($_GET['id_ven'])) {
         }
 
         $nome = validate($_POST['nome']);
-	$cpf = validate($_POST['cpf']);
-	$telefone = validate($_POST['telefone']);
-	$endereco = validate($_POST['endereco']);
+        $cpf = validate($_POST['cpf']);
+        $telefone = validate($_POST['telefone']);
+        $endereco = validate($_POST['endereco']);
         $id = validate($_POST['id']);
 
         if (empty($nome)) {
-		header("Location: ../editaVendedor.php?error=Nome é obrigatório&$user_data");
-	}else if (empty($cpf)) {
-		header("Location: ../editaVendedor.php?error=CPF é obrigatório&$user_data");
-	}else if (empty($telefone)) {
-		header("Location: ../editaVendedor.php?error=Telefone é obrigatório&$user_data");
-	}else if (empty($endereco)) {
-		header("Location: ../editaVendedor.php?error=Endereço é obrigatório&$user_data");
-	} else{
+                echo "<script>
+		window.location.href='../editaVendedor.php?id_cli=$id';
+		alert('Ops, informar o nome é obrigatório!');
+		</script>";
+        } else if (empty($cpf)) {
+                echo "<script>
+		window.location.href='../editaVendedor.php?id_cli=$id';
+		alert('Ops, informar o CPF é obrigatório!');
+		</script>";
+        } else if (empty($telefone)) {
+                echo "<script>
+		window.location.href='../editaVendedor.php?id_cli=$id';
+		alert('Ops, informar o telefone é obrigatório!');
+		</script>";;
+        } else if (empty($endereco)) {
+                echo "<script>
+		window.location.href='../editaVendedor.php?id_cli=$id';
+		alert('Ops, informar o endereço é obrigatório!');
+		</script>";
+        } else {
 
                 $sql = "UPDATE vendedor
                SET nome ='$nome', cpf='$cpf', telefone='$telefone', endereco='$endereco'
                WHERE id_ven = $id ";
                 $result = mysqli_query($conn, $sql);
                 if ($result) {
-                        header("Location: ../listaVendedor.php?success=Vendedor editado com sucesso!");
+                        echo "<script>
+                        window.location.href='../listaVendedor.php';
+                        alert('Cadastro de vendedor editado com sucesso!');
+                        </script>";
                 } else {
-                        header("Location: ../updateVendedor.php?id=$id&error=Oops! Algo deu errado.&$user_data");
+                        echo "<script>
+			window.location.href='../listaVendedor.php';
+			alert('Ops, algo deu errado!');
+			</script>";
                 }
         }
 } else {

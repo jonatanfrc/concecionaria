@@ -11,7 +11,7 @@
 
 <body>
 	<header>
-	<h3 class="logout"><a href="php/logout.php">LOGOUT</a></h3>
+		<h3 class="logout"><a href="php/logout.php">LOGOUT</a></h3>
 		<div class="caixa">
 			<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
 
@@ -27,51 +27,55 @@
 		</div>
 	</header>
 	<section class="grade">
-	<div class="container">
-		<form action="php/updateVenda.php" method="post">
+		<div class="container">
+			<form action="php/updateVenda.php" method="post">
 
-			<h4 class="display-4 text-center">Editar</h4>
-			<hr><br>
-			<?php if (isset($_GET['Erro!'])) { ?>
-				<div class="alert alert-danger" role="alert">
-					<?php echo $_GET['Erro']; ?>
+				<h4 class="display-4 text-center">Editar</h4>
+				<hr><br>
+				<?php 
+				if (isset($_GET['Erro!'])) { ?>
+					<div class="alert alert-danger" role="alert">
+						<?php echo $_GET['Erro']; ?>
+					</div>
+				<?php } ?>
+
+
+				<label>Vendedores</label>
+				<select name="id_ven">
+					<option disabled>Selecione</option>
+					<?php foreach ($Vendedores as $vendedores) : ?>
+						<option value="<?php echo $vendedores['id_ven']; ?>" <?php if ($vendedores['id_ven'] == $resultado['id_ven']) echo 'selected="selected"'; ?>><?php echo $vendedores['nome']; ?></option>
+					<?php endforeach; ?>
+				</select>
+
+				<label>Clientes</label>
+				<select name="id_cli">
+					<option disabled>Selecione</option>
+					<?php foreach ($Clientes as $cliente) : ?>
+						<option value="<?php echo $cliente['id_cli']; ?>" <?php if ($cliente['id_cli'] == $resultado['id_cli']) echo 'selected="selected"'; ?>><?php echo $cliente['nomeCli']; ?></option>
+					<?php endforeach; ?>
+				</select>
+
+				<label>Veículos</label>
+				<select name="id_vei">
+					<option disabled>Selecione</option>
+					<?php foreach ($Veiculos as $veiculo) : ?>
+						<option value="<?php echo $veiculo['id_vei']; ?>" <?php if ($veiculo['id_vei'] == $resultado['id_vei']) echo 'selected="selected"'; ?>><?php echo $veiculo['modelo']; ?></option>
+					<?php endforeach; ?>
+				</select>
+
+				<div class="mb-3">
+					<label for="exampleFormControlTextarea1" class="form-label">Anotações: </label>
+					<textarea id="anotacoes" name="anotacoes" value="<?= $resultado['anotacoes'] ?>" class="form-control" rows="3"><?php echo $resultado['anotacoes']; ?></textarea>
 				</div>
-			<?php } ?>
 
+				<input type="text" name="id" value="<?= $resultado['id_venda'] ?>" hidden>
+				
 
-			<label>Vendedores</label>
-			<select name="id_ven">
-				<option disabled>Selecione</option>
-				<?php foreach ($Vendedores as $vendedores) : ?>
-					<option value="<?php echo $vendedores['id_ven']; ?>" <?php if ($vendedores['id_ven'] == $resultado['id_ven']) echo 'selected="selected"'; ?>><?php echo $vendedores['nome']; ?></option>
-				<?php endforeach; ?>
-			</select>
-
-			<label>Clientes</label>
-			<select name="id_cli">
-				<option disabled>Selecione</option>
-				<?php foreach ($Clientes as $cliente) : ?>
-					<option value="<?php echo $cliente['id_cli']; ?>" <?php if ($cliente['id_cli'] == $resultado['id_cli']) echo 'selected="selected"'; ?>><?php echo $cliente['nomeCli']; ?></option>
-				<?php endforeach; ?>
-			</select>
-
-			<label>Veículos</label>
-			<select name="id_vei">
-				<option disabled>Selecione</option>
-				<?php foreach ($Veiculos as $veiculo) : ?>
-					<option value="<?php echo $veiculo['id_vei']; ?>" <?php if ($veiculo['id_vei'] == $resultado['id_vei']) echo 'selected="selected"'; ?>><?php echo $veiculo['modelo']; ?></option>
-				<?php endforeach; ?>
-			</select>
-
-			<div class="mb-3">
-				<label for="exampleFormControlTextarea1" class="form-label">Anotações: </label>
-				<textarea id="anotacoes" value="<?=$resultado['anotacoes'] ?>" class="form-control" id="anotacoes" rows="3"><?php echo $resultado['anotacoes']; ?></textarea>
-			</div>
-
-			<button type="submit" class="btn btn-primary" name="update">Editar</button>
-			<a href="listaVenda.php" class="retornar">Voltar</a>
-		</form>
-	</div>
+				<button type="submit" class="btn btn-primary" name="update">Editar</button>
+				<a href="listaVenda.php" class="retornar">Voltar</a>
+			</form>
+		</div>
 	</section>
 </body>
 

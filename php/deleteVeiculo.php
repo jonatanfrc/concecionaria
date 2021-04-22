@@ -15,11 +15,20 @@ if(isset($_GET['id_vei'])){
 	        WHERE id_vei = $id";
    $result = mysqli_query($conn, $sql);
    if ($result) {
-   	  header("Location: ../listaVeiculo.php?success=Veículo excluído com sucesso!");
+      echo "<script>
+      window.location.href='../listaVeiculo.php';
+      alert('Cadastro de veículo excluído com sucesso!');
+      </script>";
    }else {
-      header("Location: ../listaVeiculo.php?error=Oops! Algo deu errado.&$user_data");
+      echo "<script>
+      window.location.href='../listaVeiculo.php';
+      alert('Ops, algo deu errado!');
+      </script>";
    }
 
 }else {
-	header("Location: ../listaVeiculo.php");
+   echo "<script>
+   window.location.href='../listaVeiculo.php';
+   alert('Ops, algo deu errado!');
+   </script>";
 }

@@ -20,7 +20,7 @@ if (isset($_GET['id_vei'])) {
         if (mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_assoc($result);
         } else {
-                header("Location: readVeiuclo.php");
+                header("Location: readVeiculo.php");
         }
 } else if (isset($_POST['update'])) {
         include "conexao.php";
@@ -39,13 +39,25 @@ if (isset($_GET['id_vei'])) {
         $id = validate($_POST['id']);
 
         if (empty($modelo)) {
-                header("Location: ../editaVeiculo.php?error=Modelo é obrigatório&$user_data");
+                echo "<script>
+		window.location.href='../editaVeiculo.php?id_vei=$id';
+		alert('Ops, informar o modelo é obrigatório!');
+		</script>";
         } else if (empty($cor)) {
-                header("Location: ../editaVeiculo.php?error=Cor é obrigatório&$user_data");
+                echo "<script>
+		window.location.href='../editaVeiculo.php?id_vei=$id';
+		alert('Ops, informar a cor é obrigatório!');
+		</script>";
         } else if (empty($fabricante)) {
-                header("Location: ../editaVeiculo.php?error=Fabricante é obrigatório&$user_data");
+                echo "<script>
+		window.location.href='../editaVeiculo.php?id_vei=$id';
+		alert('Ops, informar o fabricante é obrigatório!');
+		</script>";
         } else if (empty($ano)) {
-                header("Location: ../editaVeiculo.php?error=Ano é obrigatório&$user_data");
+                echo "<script>
+		window.location.href='../editaVeiculo.php?id_vei=$id';
+		alert('Ops, informar o ano é obrigatório!');
+		</script>";
         } else {
 
                 $sql = "UPDATE veiculo
@@ -53,9 +65,15 @@ if (isset($_GET['id_vei'])) {
                WHERE id_vei = $id ";
                 $result = mysqli_query($conn, $sql);
                 if ($result) {
-                        header("Location: ../listaVeiculo.php?success=Veículo editado com sucesso!");
+                        echo "<script>
+                        window.location.href='../listaVeiculo.php';
+                        alert('Cadastro de veículo editado com sucesso!');
+                        </script>";
                 } else {
-                        header("Location: ../updateVeiculo.php?id=$id&error=Oops! Alguem deu errado.&$user_data");
+                        echo "<script>
+			window.location.href='../listaVeiculo.php';
+			alert('Ops, algo deu errado!');
+			</script>";
                 }
         }
 } else {

@@ -15,9 +15,15 @@ if(isset($_GET['id_venda'])){
 	        WHERE id_venda = $id";
    $result = mysqli_query($conn, $sql);
    if ($result) {
-   	  header("Location: ../listaVenda.php?success=Venda excluído com sucesso!");
+      echo "<script>
+      window.location.href='../listaVenda.php';
+      alert('Cadastro de venda excluído com sucesso!');
+      </script>";
    }else {
-      header("Location: ../listaVenda.php?error=Oops! Algo deu errado.&$user_data");
+      echo "<script>
+      window.location.href='../listaVenda.php';
+      alert('Ops, algo deu errado!');
+      </script>";
    }
 
 }else {

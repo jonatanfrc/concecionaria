@@ -22,6 +22,9 @@ if($row == 1) {
     exit();
 } else {
     $_SESSION['nao_autenticado'] = true;
-    header('Location: ../loga.php');
+    echo "<script>
+    window.location.href='../loga.php';
+    alert('Ops! Algo deu errado, faça o login!');
+    </script>";
     exit();
 }
