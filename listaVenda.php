@@ -1,5 +1,6 @@
 <?php include "php/readVenda.php"; ?>
 <?php include "php/conexao.php"; ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -7,18 +8,16 @@
 	<title>Lista de vendas</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
-<body class="scroll">
+<body>
 	<header>
-	<h3 class="logout"><a href="php/logout.php">LOGOUT</a></h3>
 		<div class="caixa">
-			<h1><img height="220" class="logoempresa" src="img/logoempresa.png"></h1>
+			<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
 
 			<nav>
 				<ul>	
-					<li><a href="index.php">Início</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="listaCliente.php">Clientes</a></li>
 					<li><a href="listaVendedor.php">Vendedores</a></li>
 					<li><a href="listaVeiculo.php">Veículos</a></li>
@@ -27,7 +26,6 @@
 			</nav>
 		</div>
 	</header>
-	<section class="mapa">
 	<div class="container">
 		<div class="box">
 			<h4 class="display-4 text-center">Vendas</h4><br>
@@ -61,7 +59,7 @@
 								<td><?php echo $rows['anotacoes']; ?></td>
 								<td><a href="editaVenda.php?id_venda=<?= $rows['id_venda'] ?>" class="btn btn-success">Editar</a>
 
-									<a href="php/deleteVenda.php?id_venda=<?= $rows['id_venda'] ?>" class="btn btn-danger">Excluir</a>
+									<a href="php/deleteVenda.php?id_venda=<?= $rows['id_venda'] ?>" class="btn btn-danger">Deletar</a>
 								</td>
 							</tr>
 						<?php } ?>
@@ -73,7 +71,6 @@
 			</div>
 		</div>
 	</div>
-	</section>
 </body>
 
 </html>

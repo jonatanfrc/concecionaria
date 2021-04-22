@@ -1,4 +1,3 @@
-<?php include('php/verifica_login.php'); ?>
 <?php include "php/readVenda.php"; ?>
 <!DOCTYPE html>
 <html>
@@ -7,18 +6,16 @@
 	<title>Realizar venda</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
-<body class="scroll">
+<body>
 	<header>
-	<h3 class="logout"><a href="php/logout.php">LOGOUT</a></h3>
 		<div class="caixa">
-			<h1><img height="220" class="logoempresa" src="img/logoempresa.png"></h1>
+			<h1><img height="250" class="logoempresa" src="img/logoempresa.png"></h1>
 
 			<nav>
 				<ul>
-					<li><a href="index.php">Início</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="listaCliente.php">Clientes</a></li>
 					<li><a href="listaVendedor.php">Vendedores</a></li>
 					<li><a href="listaVeiculo.php">Veículos</a></li>
@@ -27,39 +24,56 @@
 			</nav>
 		</div>
 	</header>
-	<section class="grade">
 	<div class="container">
 		<form action="php/createVenda.php" method="post">
 
 			<h4 class="display-4 text-center">Adicionar</h4>
 			<hr><br>
 			<?php if (mysqli_num_rows($result)) { ?>
-			<?php if (isset($_GET['Erro!'])) { ?>
-				<div class="alert alert-danger" role="alert">
-					<?php echo $_GET['Erro']; ?>
-				</div>
-			<?php } ?>
-			<div>
-				<?php
-				$i = 0;
-				while ($rows = mysqli_fetch_assoc($result)) {
-					var_dump(json_encode($rows));
-					$i++;
-				?>
-					<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-						<option selected>Vendedores</option>
-						<option value="$id_ven"><?= $rows['nome'] ?></option>
+				<?php if (isset($_GET['Erro!'])) { ?>
+					<div class="alert alert-danger" role="alert">
+						<?php echo $_GET['Erro']; ?>
+					</div>
+				<?php } ?>
+					<label>Vendedores</label>
+					<select name="id_ven">
+						<option selected disabled>Selecione</option>
+						<?php
+						foreach ($Vendedores as $vendedor) { ?>
+							<option id="nome" name="nome" value="<?php echo $vendedor['id_ven'] ?>">
+								<?php echo $vendedor['nome']; ?></option>
+						<?php } ?>
 					</select>
-			</div>
-		<?php } ?>
-		<?php } ?>
+					
+					<label>Clientes</label>
+					<select name="id_cli">
+						<option selected disabled>Selecione</option>
+						<?php
+						foreach ($Clientes as $cliente) { ?>
+							<option id="nomeCli" name="nomeCli" value="<?php echo $cliente['id_cli'] ?>">
+								<?php echo $cliente['nomeCli']; ?></option>
+						<?php } ?>
+					</select>
 
+					<label>Veículos</label>
+					<select name="id_vei">
+						<option selected disabled>Selecione</option>
+						<?php
+						foreach ($Veiculos as $veiculo) { ?>
+							<option id="modelo" name="modelo" value="<?php echo $veiculo['id_vei'] ?>">
+								<?php echo $veiculo['modelo']; ?></option>
+						<?php } ?>
+					</select>
 
-
-		<button type="submit" class="btn btn-primary" name="create">Adicionar</button>
-		<a href="listaVenda.php" class="retornar"> Voltar</a>
+					<div class="mb-3">
+						<label for="exampleFormControlTextarea1" class="form-label">Anotações: </label>
+						<textarea id="anotacoes" name="anotacoes" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					</div>
+				<?php } ?>
+				<button type="submit" class="btn btn-primary" name="create">Finalizar venda</button>
+				<a href="listaVenda.php" class="link-primary"> Voltar</a>
 		</form>
 	</div>
-	</section>
 </body>
+
 </html>

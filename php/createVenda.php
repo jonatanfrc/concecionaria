@@ -15,11 +15,6 @@ if (isset($_POST['create'])) {
 	$id_vei = validate($_POST['id_vei']);
 	$anotacoes = validate($_POST['anotacoes']);
 
-	$nome = validate($_POST['nomeCli']);
-	$cpf = validate($_POST['cpf']);
-	$telefone = validate($_POST['telefone']);
-	$endereco = validate($_POST['endereco']);
-
 	$user_data = 'id_ven='.$id_ven. '&id_cli='.$id_cli. '&id_vei='.$id_vei. '&anotacoes='.$anotacoes;
 
 	if (empty($id_ven)) {
